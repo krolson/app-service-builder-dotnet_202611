@@ -200,6 +200,7 @@ FORM: Approved structured product workbench; restrained neutrals with a plum res
             <ellipse cx="185" cy="207" rx="20" ry="9" fill="#39283f"/>
           </svg>
           <figcaption>A cat today</figcaption>
+          <p>More cats to come?</p>
         </figure>
       </section>
       <section id="endpoints" aria-labelledby="endpoints-title">

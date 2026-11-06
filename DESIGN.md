@@ -60,7 +60,7 @@ components:
 
 **Creative North Star: "Plum-and-neutral developer workbench"**
 
-This records the implemented `/demo` system in `DemoPage.cs`, not a broader
+This records the implemented root page system in `DemoPage.cs`, not a broader
 component library. System typography, flat mineral surfaces, plum navigation,
 and monospaced HTTP details give the small sample a structured developer-tool
 identity.

@@ -163,7 +163,7 @@ FORM: Approved structured product workbench; restrained neutrals with a plum res
         </div>
         <div class="overview">
           <div class="greeting">
-            <div class="response-label"><span>Public greeting</span><code>GET /</code></div>
+            <div class="response-label"><span>Public greeting</span><code>GET /greeting</code></div>
             <h2>{{GREETING}}</h2>
             <p>App Service Builder / dotnet-web</p>
             <p class="public-note">Rendered from SAMPLE_GREETING. Defaults to Hello.</p>
@@ -206,8 +206,8 @@ FORM: Approved structured product workbench; restrained neutrals with a plum res
         <div class="section-heading"><h2 id="endpoints-title">Try a request</h2><p>Calls this app. No credentials required.</p></div>
         <div class="endpoints">
           <div class="endpoint">
-            <span class="method">GET</span><a class="path" href="/"><code>/</code></a><p>The public greeting, in plain text.</p>
-            <button type="button" data-path="/" aria-label="Run GET /">Run <span aria-hidden="true">&#8599;</span></button>
+            <span class="method">GET</span><a class="path" href="/greeting"><code>/greeting</code></a><p>The public greeting, in plain text.</p>
+            <button type="button" data-path="/greeting" aria-label="Run GET /greeting">Run <span aria-hidden="true">&#8599;</span></button>
           </div>
           <div class="endpoint">
             <span class="method">GET</span><a class="path" href="/health"><code>/health</code></a><p>A simple health-check response.</p>

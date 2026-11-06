@@ -6,8 +6,8 @@ targets .NET 10 and has no NuGet package dependencies.
 
 ## Preview
 
-The visual showcase is available at `/demo`; the root `/` endpoint remains a
-plain-text greeting.
+The visual showcase, including the cat illustration labeled "A cat today", is
+available at `/`. The `/demo` path redirects to `/`.
 
 ![The /demo .NET workbench with plum navigation, the Hello greeting, runtime details, and HTTP endpoint controls](https://github.com/user-attachments/assets/b001a779-2a48-4bb6-b12a-508659663941)
 
@@ -20,9 +20,10 @@ this sample has not been qualified.
 
 | Endpoint | Response |
 | --- | --- |
-| `GET /` | HTTP 200, `App Service Builder / dotnet-web: Hello` followed by a newline |
+| `GET /` | HTTP 200, responsive HTML .NET workbench with the cat illustration and public greeting |
+| `GET /greeting` | HTTP 200, `App Service Builder / dotnet-web: Hello` followed by a newline |
 | `GET /health` | HTTP 200, `OK` followed by a newline |
-| `GET /demo` | HTTP 200, responsive HTML .NET workbench showing the public greeting and user-triggered requests to `/` and `/health` |
+| `GET /demo` | HTTP 302, redirects to `/` |
 | Unknown path | HTTP 404 |
 
 `SAMPLE_GREETING` changes the deliberately public greeting. The app does not
@@ -31,11 +32,11 @@ one .NET 10 web component, listening on port 8080 with `/health` as its health
 check. The manifest relies on Builder defaults for root routing, port 8080, and
 HTTP 200 as the successful health-check status.
 
-Open `/demo` for the visual showcase and template thumbnail view. It uses
+Open `/` for the visual showcase and template thumbnail view. It uses
 self-contained HTML, CSS, and JavaScript with no external assets or packages.
 The request buttons display actual endpoint responses and errors; the page does
 not report deployment status. Endpoint links remain usable without JavaScript.
-The original `/` plain-text contract is unchanged.
+The plain-text greeting is available at `/greeting`.
 
 ## Getting Started
 
@@ -80,6 +81,7 @@ In another terminal:
 
 ```sh
 curl -i http://localhost:8080/
+curl -i http://localhost:8080/greeting
 curl -i http://localhost:8080/health
 curl -i http://localhost:8080/not-found
 ```
@@ -98,7 +100,8 @@ bash scripts/smoke-test.sh
 
 The script publishes independently, starts and stops only its own processes, and
 checks exact greeting/health bodies, HTTP 404, and unset, empty, and customized
-`SAMPLE_GREETING` values, plus `/demo` HTML and encoded greeting content.
+`SAMPLE_GREETING` values, plus root HTML, the cat illustration and caption,
+encoded greeting content, and the `/demo` redirect.
 It uses port 8080; stop your earlier local run first.
 The GitHub Actions workflow runs the same check on pull requests and changes to
 `main`. Generated `bin/` and `obj/` files are not committed.
@@ -120,7 +123,7 @@ for the currently available Private Preview experience.
 3. Explicitly start a deployment using the Portal's deploy action. Wait for a
    successful terminal deployment state; source authorization or saving a source
    selection alone does not prove that an app is running.
-4. Open the runtime URL shown for your app. Verify `/` returns the greeting and
+4. Open the runtime URL shown for your app. Verify `/` shows the cat page and
    `/health` returns HTTP 200 with `OK`. If deployment fails, inspect its logs
    before retrying; do not treat an accepted request as successful deployment.
 
@@ -142,7 +145,7 @@ To try a different public greeting locally, stop the app first and run:
 SAMPLE_GREETING="Welcome" dotnet bin/sample-publish/BuilderDotnetSample.dll
 ```
 
-`GET /` now returns `App Service Builder / dotnet-web: Welcome` followed by a
+`GET /greeting` now returns `App Service Builder / dotnet-web: Welcome` followed by a
 newline. Unset or empty values use `Hello`. **Never put a secret in
 `SAMPLE_GREETING`: its value is returned publicly without authentication.**
 

@@ -84,18 +84,25 @@ for mode in unset empty custom encoded; do
         exit 1
     fi
 
-    assert_response "/" 200 "App Service Builder / dotnet-web: $expected"$'\n'
+    assert_response "/greeting" 200 "App Service Builder / dotnet-web: $expected"$'\n'
     assert_response "/health" 200 $'OK\n'
     assert_response "/not-found" 404 ""
+    assert_response "/demo" 302 ""
+    if ! curl --silent --show-error --max-time 5 --dump-header - --output /dev/null http://127.0.0.1:8080/demo |
+        tr -d '\r' | grep -Fxq 'Location: /'; then
+        printf 'Expected /demo to redirect to /\n' >&2
+        exit 1
+    fi
     demo_status=$(curl --silent --show-error --max-time 5 \
-        --output "$temp_dir/body" --write-out '%{http_code}' http://127.0.0.1:8080/demo)
+        --output "$temp_dir/body" --write-out '%{http_code}' http://127.0.0.1:8080/)
     if [[ "$demo_status" != 200 ]] ||
         ! grep -Fq '<title>.NET workbench | App Service Builder</title>' "$temp_dir/body" ||
         ! grep -Fq 'role="img" aria-labelledby="cat-title"' "$temp_dir/body" ||
         ! grep -Fq '<title id="cat-title">A plum-colored cat with pointed ears and a curled tail</title>' "$temp_dir/body" ||
         ! grep -Fq '<figcaption>A cat today</figcaption>' "$temp_dir/body" ||
+        ! grep -Fq 'data-path="/greeting"' "$temp_dir/body" ||
         ! grep -Fq 'data-path="/health"' "$temp_dir/body"; then
-        printf 'Unexpected /demo response (%s greeting): HTTP %s\n' "$mode" "$demo_status" >&2
+        printf 'Unexpected root page response (%s greeting): HTTP %s\n' "$mode" "$demo_status" >&2
         exit 1
     fi
     if [[ "$mode" == encoded ]]; then
@@ -104,7 +111,7 @@ for mode in unset empty custom encoded; do
         demo_greeting="$expected"
     fi
     if ! grep -Fq "<h2>$demo_greeting</h2>" "$temp_dir/body"; then
-        printf 'Missing or incorrectly encoded /demo greeting (%s)\n' "$mode" >&2
+        printf 'Missing or incorrectly encoded root page greeting (%s)\n' "$mode" >&2
         exit 1
     fi
     stop_app

@@ -202,6 +202,40 @@ FORM: Approved structured product workbench; restrained neutrals with a plum res
           <figcaption>A cat today</figcaption>
           <p>More cats to come?</p>
         </figure>
+        <figure class="cat-picture">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="chipmunk-title">
+            <title id="chipmunk-title">A striped chipmunk with round cheeks and a bushy tail holding an acorn</title>
+            <rect width="320" height="240" fill="#ede8f1"/>
+            <ellipse cx="160" cy="214" rx="101" ry="10" fill="#dedbe3"/>
+            <path d="M206 195 C282 185 292 69 254 62 C220 56 229 102 241 115 C260 142 224 155 201 156Z" fill="#9b643f"/>
+            <path d="M221 181 C263 158 275 102 252 81" fill="none" stroke="#e8c99a" stroke-width="12" stroke-linecap="round"/>
+            <ellipse cx="171" cy="169" rx="56" ry="44" fill="#9b643f"/>
+            <path d="M177 133 Q205 159 190 204" fill="none" stroke="#39283f" stroke-width="19"/>
+            <path d="M177 133 Q205 159 190 204" fill="none" stroke="#f5e4c7" stroke-width="7"/>
+            <ellipse cx="150" cy="175" rx="29" ry="34" fill="#e8c99a"/>
+            <ellipse cx="118" cy="72" rx="17" ry="23" fill="#9b643f"/>
+            <ellipse cx="176" cy="72" rx="17" ry="23" fill="#9b643f"/>
+            <ellipse cx="118" cy="73" rx="9" ry="14" fill="#e8c99a"/>
+            <ellipse cx="176" cy="73" rx="9" ry="14" fill="#e8c99a"/>
+            <ellipse cx="147" cy="112" rx="49" ry="43" fill="#9b643f"/>
+            <path d="M113 88 Q147 105 181 88 M103 110 Q147 128 191 110" fill="none" stroke="#f5e4c7" stroke-width="8" stroke-linecap="round"/>
+            <ellipse cx="120" cy="130" rx="23" ry="20" fill="#e8c99a"/>
+            <ellipse cx="174" cy="130" rx="23" ry="20" fill="#e8c99a"/>
+            <ellipse cx="126" cy="108" rx="6" ry="8" fill="#29252e"/>
+            <ellipse cx="168" cy="108" rx="6" ry="8" fill="#29252e"/>
+            <circle cx="128" cy="105" r="2" fill="#fff"/>
+            <circle cx="170" cy="105" r="2" fill="#fff"/>
+            <path d="M140 127 Q147 121 154 127 L147 134Z" fill="#39283f"/>
+            <path d="M140 139 Q147 145 154 139" fill="none" stroke="#39283f" stroke-width="2.5" stroke-linecap="round"/>
+            <ellipse cx="136" cy="207" rx="20" ry="9" fill="#9b643f"/>
+            <ellipse cx="186" cy="207" rx="20" ry="9" fill="#9b643f"/>
+            <path d="M135 170 Q152 211 169 170Z" fill="#9b643f"/>
+            <path d="M133 171 Q152 151 171 171 L171 177 L133 177Z" fill="#633d71"/>
+            <path d="M152 162 L155 154" fill="none" stroke="#39283f" stroke-width="4" stroke-linecap="round"/>
+            <ellipse cx="128" cy="177" rx="10" ry="7" fill="#e8c99a"/>
+            <ellipse cx="176" cy="177" rx="10" ry="7" fill="#e8c99a"/>
+          </svg>
+        </figure>
       </section>
       <section id="endpoints" aria-labelledby="endpoints-title">
         <div class="section-heading"><h2 id="endpoints-title">Try a request</h2><p>Calls this app. No credentials required.</p></div>

@@ -91,6 +91,9 @@ for mode in unset empty custom encoded; do
         --output "$temp_dir/body" --write-out '%{http_code}' http://127.0.0.1:8080/demo)
     if [[ "$demo_status" != 200 ]] ||
         ! grep -Fq '<title>.NET workbench | App Service Builder</title>' "$temp_dir/body" ||
+        ! grep -Fq 'role="img" aria-labelledby="cat-title"' "$temp_dir/body" ||
+        ! grep -Fq '<title id="cat-title">A plum-colored cat with pointed ears and a curled tail</title>' "$temp_dir/body" ||
+        ! grep -Fq '<figcaption>A cat today</figcaption>' "$temp_dir/body" ||
         ! grep -Fq 'data-path="/health"' "$temp_dir/body"; then
         printf 'Unexpected /demo response (%s greeting): HTTP %s\n' "$mode" "$demo_status" >&2
         exit 1

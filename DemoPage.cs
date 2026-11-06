@@ -73,6 +73,9 @@ FORM: Approved structured product workbench; restrained neutrals with a plum res
     .fact { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid #ebe8ee; font-size: 13px; }
     dt { color: var(--muted); } dd { margin: 0; font-weight: 600; }
     .fact:last-child { padding-bottom: 0; }
+    .cat-picture { margin: 24px 0 0; padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--white); text-align: center; }
+    .cat-picture svg { display: block; width: 100%; max-width: 320px; height: auto; margin-inline: auto; border-radius: 8px; }
+    .cat-picture figcaption { margin-top: 12px; color: var(--plum); font-size: 20px; font-weight: 650; }
     .section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin: 32px 0 15px; }
     .section-heading h2 { font-size: 20px; letter-spacing: -.02em; margin: 0; font-weight: 650; }
     .section-heading p { font-size: 12px; color: var(--muted); margin: 0; }
@@ -175,6 +178,29 @@ FORM: Approved structured product workbench; restrained neutrals with a plum res
             </dl>
           </div>
         </div>
+        <figure class="cat-picture">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="cat-title">
+            <title id="cat-title">A plum-colored cat with pointed ears and a curled tail</title>
+            <rect width="320" height="240" fill="#ede8f1"/>
+            <ellipse cx="160" cy="214" rx="101" ry="10" fill="#dedbe3"/>
+            <path d="M206 199 C280 216 284 140 252 144 C230 146 253 174 222 177" fill="none" stroke="#633d71" stroke-width="20" stroke-linecap="round"/>
+            <ellipse cx="166" cy="173" rx="58" ry="43" fill="#633d71"/>
+            <path d="M103 104 L100 42 L137 66 Q160 58 183 66 L220 42 L217 104 Q230 153 160 159 Q90 153 103 104Z" fill="#633d71"/>
+            <path d="M109 60 L113 91 L130 74Z M211 60 L190 74 L207 91Z" fill="#d5c6dc"/>
+            <ellipse cx="137" cy="106" rx="8" ry="11" fill="#fff"/>
+            <ellipse cx="183" cy="106" rx="8" ry="11" fill="#fff"/>
+            <ellipse cx="139" cy="107" rx="3" ry="7" fill="#39283f"/>
+            <ellipse cx="181" cy="107" rx="3" ry="7" fill="#39283f"/>
+            <path d="M153 124 L167 124 L160 131Z" fill="#d5c6dc"/>
+            <g fill="none" stroke="#f5f4f7" stroke-width="2.5" stroke-linecap="round">
+              <path d="M160 132 Q153 142 146 135 M160 132 Q167 142 174 135"/>
+              <path d="M132 126 L87 118 M132 134 L85 137 M188 126 L233 118 M188 134 L235 137"/>
+            </g>
+            <ellipse cx="139" cy="207" rx="20" ry="9" fill="#39283f"/>
+            <ellipse cx="185" cy="207" rx="20" ry="9" fill="#39283f"/>
+          </svg>
+          <figcaption>A cat today</figcaption>
+        </figure>
       </section>
       <section id="endpoints" aria-labelledby="endpoints-title">
         <div class="section-heading"><h2 id="endpoints-title">Try a request</h2><p>Calls this app. No credentials required.</p></div>
